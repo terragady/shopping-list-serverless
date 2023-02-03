@@ -13,7 +13,7 @@ function App() {
   const app = new Realm.App({ id: 'shopping-list-serverless-fqtdh' });
   // The redirect URI should be on the same domain as this app and
   // specified in the auth provider configuration.
-  const redirectUri = 'http://localhost:3000';
+  const redirectUri = process.env.NODE_ENV === 'production' ? 'https://shopping-list-serverless.netlify.app/' : 'http://localhost:3000';
   Realm.handleAuthRedirect();
 
   // Calling logIn() opens a Facebook authentication screen in a new window.
@@ -30,7 +30,7 @@ function App() {
     Realm.handleAuthRedirect();
   };
   const login2 = () => {
-    app.logIn(Realm.Credentials.emailPassword("terragady@gmail.com", "test4321")).then((user) => {
+    app.logIn(Realm.Credentials.emailPassword('terragady@gmail.com', 'test4321')).then((user) => {
       // The logIn() promise will not resolve until you call `handleAuthRedirect()`
       // from the new window after the user has successfully authenticated.
       console.log(`Logged in with id: ${JSON.stringify(user)}`);
