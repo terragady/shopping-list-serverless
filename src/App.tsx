@@ -10,7 +10,6 @@ const Login = styled.div`
 `;
 
 function App() {
-  const [token, setToken] = React.useState<string | null>(null);
   const app = new Realm.App({ id: 'shopping-list-serverless-fqtdh' });
   // The redirect URI should be on the same domain as this app and
   // specified in the auth provider configuration.
