@@ -46,6 +46,7 @@ function App() {
         <Login onClick={() => login()}></Login>
         <Login onClick={() => login2()}></Login>
       </header>
+      {process.env.NODE_ENV}
     </div>
   );
 }
