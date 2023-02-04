@@ -1,0 +1,12 @@
+query ShoppingLists($limit: Int = 100) {
+    shoppingLists(limit: $limit) {
+        _id
+        addedBy {
+            _id
+            user_id
+            name
+        }
+        done
+        product  
+    }
+}

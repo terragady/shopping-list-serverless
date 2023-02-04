@@ -1,0 +1,20 @@
+overwrite: true
+schema: 
+  - https://eu-west-1.aws.realm.mongodb.com/api/client/v2.0/app/shopping-list-serverless-fqtdh/graphql:
+      headers:
+        authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJiYWFzX2RldmljZV9pZCI6IjYzZGVhYjI1ZGI1YTgzODFjYjdhNjg3NiIsImJhYXNfZG9tYWluX2lkIjoiNjNkZDFjNDQ0ZGRmZWI3ZWVlNzZlZmViIiwiZXhwIjoxNjc1NTM4OTkwLCJpYXQiOjE2NzU1MzcxOTAsImlzcyI6IjYzZGVhYjI2ZGI1YTgzODFjYjdhNjg5OCIsInN0aXRjaF9kZXZJZCI6IjYzZGVhYjI1ZGI1YTgzODFjYjdhNjg3NiIsInN0aXRjaF9kb21haW5JZCI6IjYzZGQxYzQ0NGRkZmViN2VlZTc2ZWZlYiIsInN1YiI6IjYzZGQyNDgwMmJjZjI0OGE5NTAxZDkxYiIsInR5cCI6ImFjY2VzcyJ9.PwujUyaA0AwhBDVfcz_Rr1mQd1ypto6tnArilsPEIZE"
+documents: "src/**/*.gql"
+generates:
+  src/generated/graphql.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+    config:
+      withHooks: true
+      hooksImportFrom: "@apollo/client"
+      omitOperationSuffix: true
+      reactApolloVersion: 3
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"
