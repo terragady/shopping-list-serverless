@@ -45,6 +45,7 @@ function App() {
       <header className='App-header'>
         <Login onClick={() => login()}></Login>
         <Login onClick={() => login2()}></Login>
+        <h1>sda{app.currentUser?.isLoggedIn.toString()}</h1>
       </header>
       {process.env.NODE_ENV}
     </div>
