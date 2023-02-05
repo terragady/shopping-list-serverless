@@ -4,7 +4,7 @@ import { ApolloProvider } from '@apollo/client'
 import client from 'apollo'
 import { Routes, Route, Navigate, Outlet } from 'react-router-dom'
 import styled from 'styled-components'
-import * as GQL from 'generated/graphql'
+// import * as GQL from 'generated/graphql'
 import ScrollToTop from 'components/scrollToTop/ScrollToTop'
 import * as Realm from 'realm-web';
 import { realmApp } from 'realm'
@@ -19,16 +19,6 @@ const Wrapper = styled.div`
   box-sizing: border-box;
 `
 
-const ErrorMessage = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  font-size: 25px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  text-align: center;
-`
 
 const Root = () => {
   const Token = () => {
