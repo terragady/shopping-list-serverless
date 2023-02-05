@@ -18,8 +18,8 @@ async function getValidAccessToken() {
 
 export const httpLink = new HttpLink({ uri: 'https://eu-west-1.aws.realm.mongodb.com/api/client/v2.0/app/shopping-list-serverless-fqtdh/graphql' })
 
-export const authMiddleware = new ApolloLink((operation, forward) => {
-  getValidAccessToken().then(token => {
+export const authMiddleware = new ApolloLink(async (operation, forward) => {
+  await getValidAccessToken().then(token => {
     operation.setContext({
       headers: {
         ...operation.getContext().headers,
