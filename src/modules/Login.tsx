@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import * as Realm from 'realm-web'
 import { realmApp } from 'realm'
-import Loader from 'components/loader/Loader'
 import CircleSpinner from 'components/loader/CircleSpinner'
 import facebook from 'assets/facebook.png'
 
