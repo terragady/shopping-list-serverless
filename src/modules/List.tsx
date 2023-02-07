@@ -12,6 +12,22 @@ import React from 'react'
 import { realmApp } from 'realm'
 import styled from 'styled-components'
 
+const Box = styled.div`
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  border: 2px solid rgba(240, 240, 240, 0.9);
+  margin: 8px;
+  flex-shrink: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none !important;
+`
+
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
@@ -24,6 +40,12 @@ const Wrapper = styled.div`
     background-color: rgb(88, 88, 88);
     color: grey;
     font-style: italic;
+    ${Box} {
+      border-color: rgba(240, 240, 240, 0.3);
+    }
+    .name {
+      color: rgba(240, 240, 240, 0.3);
+    }
   }
 `
 
@@ -94,9 +116,11 @@ const StyledInput = styled.input`
 `
 
 const ListItem = styled.div`
-  background-color: rgba(138, 138, 138, 0.4);
+  background-color: rgba(138, 138, 138, 0.2);
   color: #3b3b3b;
+  border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 10px;
+  box-shadow: 3px 3px 10px 1px rgba(138, 138, 138, 0.5);
   /* padding: 10px 10px 10px 10px; */
   margin-bottom: 10px;
   align-items: left;
@@ -110,30 +134,20 @@ const ListItem = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  .test {
+  .name {
     display: none;
+    position: absolute;
+    right: 5px;
+    bottom: 0;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.3);
   }
   :hover {
-    .test {
+    .name {
       display: block;
     }
-    background-color: rgba(138, 138, 138, 1);
   }
-`
-const Box = styled.div`
-  width: 25px;
-  height: 25px;
-  border-radius: 5px;
-  border: 2px solid rgba(240, 240, 240, 0.555);
-  margin: 8px;
-  flex-shrink: 0;
-  padding: 0;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  text-decoration: none !important;
 `
 
 const Error = styled.div`
@@ -145,7 +159,15 @@ const Error = styled.div`
   text-align: center;
 `
 
-const AddModal = ({ onClose, onAdd, setError }: { onClose: () => void; onAdd: (options: AddShoppingListMutationOptions) => void, setError: (e:string) => void }) => {
+const AddModal = ({
+  onClose,
+  onAdd,
+  setError,
+}: {
+  onClose: () => void
+  onAdd: (options: AddShoppingListMutationOptions) => void
+  setError: (e: string) => void
+}) => {
   const [name, setName] = React.useState('')
   const [loading, setLoading] = React.useState(false)
 
@@ -162,7 +184,7 @@ const AddModal = ({ onClose, onAdd, setError }: { onClose: () => void; onAdd: (o
         setLoading(false)
         onClose()
       },
-      onError: (e) => {
+      onError: e => {
         setError(e.message)
         setLoading(false)
         onClose()
@@ -217,7 +239,6 @@ function List({
       {data?.map(item => {
         return (
           <ListItem className={item?.done ? 'done' : ''} key={item?._id}>
-            <Box className="test">H</Box>
             <Box
               onClick={e => {
                 e.preventDefault()
@@ -255,6 +276,7 @@ function List({
                 X
               </div>
             )}
+            <div className='name'>{item?.addedBy.split(' ')[0]}</div>
           </ListItem>
         )
       })}
@@ -281,11 +303,13 @@ function List({
             alignItems: 'center',
             borderRadius: '15px',
           }}
-          onClick={() => onDeleteMany({
-            onError: e => {
-              setError(e.message)
-            }
-          })}
+          onClick={() =>
+            onDeleteMany({
+              onError: e => {
+                setError(e.message)
+              },
+            })
+          }
         >
           delete all done
         </div>
