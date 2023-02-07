@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import React from 'react'
 import { ApolloProvider } from '@apollo/client'
 import client from 'apollo'
 import { Routes, Route, Navigate, Outlet } from 'react-router-dom'
