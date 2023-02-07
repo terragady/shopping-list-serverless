@@ -27,7 +27,8 @@ function App() {
     if (realmApp.currentUser?.isLoggedIn) {
       navigate('/', { replace: true })
     }
-  }, [realmApp.currentUser?.isLoggedIn, navigate])
+  }, [])
+
   const login = () => {
     setLoading(true)
     realmApp
