@@ -4,7 +4,9 @@ import List from './List'
 import CircleSpinner, { LoaderWrapper } from 'components/loader/CircleSpinner'
 
 function ShoppingList() {
-  const { data, loading, error } = useShoppingLists()
+  const { data, loading, error } = useShoppingLists({
+    fetchPolicy: 'cache-and-network',
+  })
   const [deleteShoppingList] = useDeleteShoppingList({
     update: (cache, { data }) => {
       if (data?.deleteOneShoppingList) {

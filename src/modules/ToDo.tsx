@@ -4,7 +4,9 @@ import List from './List'
 import CircleSpinner, { LoaderWrapper } from 'components/loader/CircleSpinner'
 
 function ToDo() {
-  const { data, loading, error } = useToDos()
+  const { data, loading, error } = useToDos({
+    fetchPolicy: 'cache-and-network',
+  })
   const [deleteToDo] = useDeleteToDo({
     update: (cache, { data }) => {
       if (data?.deleteOneToDo) {
