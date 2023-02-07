@@ -31,7 +31,24 @@ function ToDo() {
       }
     },
   })
-  const [updateToDo] = useUpdateToDo()
+  const [updateToDo] = useUpdateToDo({
+    update: (cache, { data }) => {
+      if (data?.updateOneToDo) {
+        cache.modify({
+          fields: {
+            toDos(existingToDos = [], { readField }) {
+              return existingToDos.map((toDoRef: any) => {
+                if (data.updateOneToDo?._id === readField('_id', toDoRef)) {
+                  return data.updateOneToDo
+                }
+                return toDoRef
+              })
+            },
+          },
+        })
+      }
+    },
+  })
   const [deleteManyToDos] = useDeleteManyToDos({
     refetchQueries: ['ToDos'],
   })

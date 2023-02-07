@@ -31,7 +31,24 @@ function ShoppingList() {
       }
     },
   })
-  const [updateShoppingList] = useUpdateShoppingList()
+  const [updateShoppingList] = useUpdateShoppingList({
+    update: (cache, { data }) => {
+      if (data?.updateOneShoppingList) {
+        cache.modify({
+          fields: {
+            shoppingLists(existingShoppingLists = [], { readField }) {
+              return existingShoppingLists.map((shoppingListRef: any) => {
+                if (data.updateOneShoppingList?._id === readField('_id', shoppingListRef)) {
+                  return data.updateOneShoppingList
+                }
+                return shoppingListRef
+              })
+            },
+          },
+        })
+      }
+    },
+  })
   const [deleteManyShoppingLists] = useDeleteManyShoppingLists({
     refetchQueries: ['ShoppingLists'],
   })
@@ -46,13 +63,7 @@ function ShoppingList() {
   if (!data) return null
 
   return (
-    <List
-      data={data.shoppingLists}
-      onDelete={deleteShoppingList}
-      onAdd={addShoppingList}
-      onPatch={updateShoppingList}
-      onDeleteMany={deleteManyShoppingLists}
-    />
+    <List data={data.shoppingLists} onDelete={deleteShoppingList} onAdd={addShoppingList} onPatch={updateShoppingList} onDeleteMany={deleteManyShoppingLists} />
   )
 }
 
