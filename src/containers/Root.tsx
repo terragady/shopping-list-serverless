@@ -46,23 +46,10 @@ const Main = styled.div`
 `
 
 const Root = () => {
-  const location = useLocation()
-  const navigate = useNavigate()
-
   const Token = () => {
     Realm.handleAuthRedirect()
     return null
   }
-
-  useEffect(() => {
-    localStorage.setItem('path', location.pathname)
-  }, [location.pathname])
-
-  useEffect(() => {
-    if (localStorage.getItem('path')) {
-      navigate(localStorage.getItem('path') || '/', { replace: true })
-    }
-  }, [])
 
   return (
     <ApolloProvider client={client}>
