@@ -482,6 +482,21 @@ export type DeleteFromPolandVariables = Exact<{
 
 export type DeleteFromPoland = { __typename?: 'Mutation', deleteOneZPolski?: { __typename?: 'ZPolski', _id: any, addedBy: string, done: boolean, product: string } | null };
 
+export type DeleteManyFromPolandsVariables = Exact<{ [key: string]: never; }>;
+
+
+export type DeleteManyFromPolands = { __typename?: 'Mutation', deleteManyZPolskis?: { __typename?: 'DeleteManyPayload', deletedCount: number } | null };
+
+export type DeleteManyShoppingListsVariables = Exact<{ [key: string]: never; }>;
+
+
+export type DeleteManyShoppingLists = { __typename?: 'Mutation', deleteManyShoppingLists?: { __typename?: 'DeleteManyPayload', deletedCount: number } | null };
+
+export type DeleteManyToDosVariables = Exact<{ [key: string]: never; }>;
+
+
+export type DeleteManyToDos = { __typename?: 'Mutation', deleteManyToDos?: { __typename?: 'DeleteManyPayload', deletedCount: number } | null };
+
 export type DeleteShoppingListVariables = Exact<{
   _id: Scalars['ObjectId'];
 }>;
@@ -698,6 +713,102 @@ export function useDeleteFromPoland(baseOptions?: Apollo.MutationHookOptions<Del
 export type DeleteFromPolandHookResult = ReturnType<typeof useDeleteFromPoland>;
 export type DeleteFromPolandMutationResult = Apollo.MutationResult<DeleteFromPoland>;
 export type DeleteFromPolandMutationOptions = Apollo.BaseMutationOptions<DeleteFromPoland, DeleteFromPolandVariables>;
+export const DeleteManyFromPolandsDocument = gql`
+    mutation DeleteManyFromPolands {
+  deleteManyZPolskis(query: {done: true}) {
+    deletedCount
+  }
+}
+    `;
+export type DeleteManyFromPolandsMutationFn = Apollo.MutationFunction<DeleteManyFromPolands, DeleteManyFromPolandsVariables>;
+
+/**
+ * __useDeleteManyFromPolands__
+ *
+ * To run a mutation, you first call `useDeleteManyFromPolands` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useDeleteManyFromPolands` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [deleteManyFromPolands, { data, loading, error }] = useDeleteManyFromPolands({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useDeleteManyFromPolands(baseOptions?: Apollo.MutationHookOptions<DeleteManyFromPolands, DeleteManyFromPolandsVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<DeleteManyFromPolands, DeleteManyFromPolandsVariables>(DeleteManyFromPolandsDocument, options);
+      }
+export type DeleteManyFromPolandsHookResult = ReturnType<typeof useDeleteManyFromPolands>;
+export type DeleteManyFromPolandsMutationResult = Apollo.MutationResult<DeleteManyFromPolands>;
+export type DeleteManyFromPolandsMutationOptions = Apollo.BaseMutationOptions<DeleteManyFromPolands, DeleteManyFromPolandsVariables>;
+export const DeleteManyShoppingListsDocument = gql`
+    mutation DeleteManyShoppingLists {
+  deleteManyShoppingLists(query: {done: true}) {
+    deletedCount
+  }
+}
+    `;
+export type DeleteManyShoppingListsMutationFn = Apollo.MutationFunction<DeleteManyShoppingLists, DeleteManyShoppingListsVariables>;
+
+/**
+ * __useDeleteManyShoppingLists__
+ *
+ * To run a mutation, you first call `useDeleteManyShoppingLists` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useDeleteManyShoppingLists` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [deleteManyShoppingLists, { data, loading, error }] = useDeleteManyShoppingLists({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useDeleteManyShoppingLists(baseOptions?: Apollo.MutationHookOptions<DeleteManyShoppingLists, DeleteManyShoppingListsVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<DeleteManyShoppingLists, DeleteManyShoppingListsVariables>(DeleteManyShoppingListsDocument, options);
+      }
+export type DeleteManyShoppingListsHookResult = ReturnType<typeof useDeleteManyShoppingLists>;
+export type DeleteManyShoppingListsMutationResult = Apollo.MutationResult<DeleteManyShoppingLists>;
+export type DeleteManyShoppingListsMutationOptions = Apollo.BaseMutationOptions<DeleteManyShoppingLists, DeleteManyShoppingListsVariables>;
+export const DeleteManyToDosDocument = gql`
+    mutation DeleteManyToDos {
+  deleteManyToDos(query: {done: true}) {
+    deletedCount
+  }
+}
+    `;
+export type DeleteManyToDosMutationFn = Apollo.MutationFunction<DeleteManyToDos, DeleteManyToDosVariables>;
+
+/**
+ * __useDeleteManyToDos__
+ *
+ * To run a mutation, you first call `useDeleteManyToDos` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useDeleteManyToDos` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [deleteManyToDos, { data, loading, error }] = useDeleteManyToDos({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useDeleteManyToDos(baseOptions?: Apollo.MutationHookOptions<DeleteManyToDos, DeleteManyToDosVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<DeleteManyToDos, DeleteManyToDosVariables>(DeleteManyToDosDocument, options);
+      }
+export type DeleteManyToDosHookResult = ReturnType<typeof useDeleteManyToDos>;
+export type DeleteManyToDosMutationResult = Apollo.MutationResult<DeleteManyToDos>;
+export type DeleteManyToDosMutationOptions = Apollo.BaseMutationOptions<DeleteManyToDos, DeleteManyToDosVariables>;
 export const DeleteShoppingListDocument = gql`
     mutation DeleteShoppingList($_id: ObjectId!) {
   deleteOneShoppingList(query: {_id: $_id}) {

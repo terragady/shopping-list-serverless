@@ -1,4 +1,4 @@
-mutation DeleteManyFromPoland {
+mutation DeleteManyFromPolands {
   deleteManyZPolskis(query: { done: true }) {
     deletedCount
   }

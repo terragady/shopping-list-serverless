@@ -1,6 +1,7 @@
 import CircleSpinner from 'components/loader/CircleSpinner'
 import {
   AddShoppingListMutationOptions,
+  DeleteManyFromPolandsMutationOptions,
   DeleteShoppingListMutationOptions,
   ShoppingList,
   ToDo,
@@ -126,7 +127,16 @@ const Box = styled.div`
   text-decoration: none !important;
 `
 
-const AddModal = ({ onClose, onAdd }: { onClose: () => void; onAdd: (options: AddShoppingListMutationOptions) => void }) => {
+const Error = styled.div`
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  background-color: rgba(255, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+`
+
+const AddModal = ({ onClose, onAdd, setError }: { onClose: () => void; onAdd: (options: AddShoppingListMutationOptions) => void, setError: (e:string) => void }) => {
   const [name, setName] = React.useState('')
   const [loading, setLoading] = React.useState(false)
 
@@ -143,8 +153,10 @@ const AddModal = ({ onClose, onAdd }: { onClose: () => void; onAdd: (options: Ad
         setLoading(false)
         onClose()
       },
-      onError: () => {
+      onError: (e) => {
+        setError(e.message)
         setLoading(false)
+        onClose()
       },
     })
   }
@@ -173,63 +185,79 @@ function List({
   onDelete,
   onAdd,
   onPatch,
+  onDeleteMany,
 }: {
   data: (ShoppingList | ToDo | ZPolski | null)[] | undefined
   onDelete: (options: DeleteShoppingListMutationOptions) => void
   onAdd: (options: AddShoppingListMutationOptions) => void
   onPatch: (options: UpdateShoppingListMutationOptions) => void
+  onDeleteMany: (options?: DeleteManyFromPolandsMutationOptions) => void
 }) {
   const [open, setOpen] = React.useState(false)
+  const [error, setError] = React.useState<string | null>(null)
   return (
-    <>
-      <Wrapper>
-        {open && <AddModal onClose={() => setOpen(false)} onAdd={onAdd} />}
-        {data?.map(item => {
-          return (
-            <ListItem className={item?.done ? 'done' : ''}>
-              <Box
+    <Wrapper>
+      {open && <AddModal onClose={() => setOpen(false)} onAdd={onAdd} setError={setError} />}
+      {error && (
+        <Error onClick={() => setError(null)}>
+          <code style={{ color: 'red' }}>Error: {error}</code>
+          <br />
+          <span style={{ fontSize: '0.5em' }}>Click to close</span>
+        </Error>
+      )}
+      {data?.map(item => {
+        return (
+          <ListItem className={item?.done ? 'done' : ''} key={item?._id}>
+            <Box
+              onClick={e => {
+                e.preventDefault()
+                e.stopPropagation()
+                onPatch({
+                  variables: {
+                    _id: item?._id!,
+                    done: !item?.done,
+                  },
+                  onError: e => {
+                    setError(e.message)
+                  },
+                })
+              }}
+            >
+              {item?.done && '✔️'}
+            </Box>
+            {item?.product}
+            {item?.done === true && (
+              <div
                 onClick={e => {
                   e.preventDefault()
                   e.stopPropagation()
-                  onPatch({
+                  onDelete({
                     variables: {
                       _id: item?._id!,
-                      done: !item?.done,
+                    },
+                    onError: e => {
+                      setError(e.message)
                     },
                   })
                 }}
+                style={{ cursor: 'pointer', position: 'absolute', right: 0, padding: '0 10px', fontStyle: 'normal', color: 'red', fontWeight: 'bold' }}
               >
-                {item?.done && '✔️'}
-              </Box>
-              {item?.product}
-              {item?.done === true && (
-                <div
-                  onClick={e => {
-                    e.preventDefault()
-                    e.stopPropagation()
-                    onDelete({
-                      variables: {
-                        _id: item?._id!,
-                      },
-                    })
-                  }}
-                  style={{ cursor: 'pointer', position: 'absolute', right: 0, padding: '0 10px', fontStyle: 'normal', color: 'red', fontWeight: 'bold' }}
-                >
-                  X
-                </div>
-              )}
-            </ListItem>
-          )
-        })}
-        <AddButton
-          onClick={() => {
-            setOpen(true)
-          }}
-        >
-          ADD
-        </AddButton>
+                X
+              </div>
+            )}
+          </ListItem>
+        )
+      })}
+      <AddButton
+        onClick={() => {
+          setOpen(true)
+        }}
+      >
+        ADD
+      </AddButton>
 
-      {data?.some(e=> e?.done) && <div
+      {data?.some(e => e?.done) && (
+        <div
           style={{
             order: '2',
             color: 'white',
@@ -243,12 +271,17 @@ function List({
             alignItems: 'center',
             borderRadius: '15px',
           }}
+          onClick={() => onDeleteMany({
+            onError: e => {
+              setError(e.message)
+            }
+          })}
         >
           delete all done
-        </div>}
-        <div style={{ order: '2', color: 'white' }}>{'.'}</div>
-      </Wrapper>
-    </>
+        </div>
+      )}
+      <div style={{ order: '2', color: 'white' }}>{'.'}</div>
+    </Wrapper>
   )
 }
 

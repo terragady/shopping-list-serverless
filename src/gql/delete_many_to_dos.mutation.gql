@@ -1,0 +1,5 @@
+mutation DeleteManyToDos {
+  deleteManyToDos(query: { done: true }) {
+    deletedCount
+  }
+}
