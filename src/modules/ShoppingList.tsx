@@ -25,7 +25,7 @@ function ShoppingList() {
       if (data?.insertOneShoppingList) {
         cache.modify({
           fields: {
-            shoppingLists(existingShoppingLists = [], { readField }) {
+            shoppingLists(existingShoppingLists = []) {
               return [...existingShoppingLists, data.insertOneShoppingList]
             },
           },

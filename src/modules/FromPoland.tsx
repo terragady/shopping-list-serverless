@@ -5,8 +5,34 @@ import CircleSpinner, { LoaderWrapper } from 'components/loader/CircleSpinner'
 
 function FromPoland() {
   const { data, loading, error } = useFromPoland()
-  const [deleteFromPoland] = useDeleteFromPoland()
-  const [addFromPoland] = useAddFromPoland()
+  const [deleteFromPoland] = useDeleteFromPoland({
+    update: (cache, { data }) => {
+      if (data?.deleteOneZPolski) {
+        cache.modify({
+          fields: {
+            zPolskis(existingFromPoland = [], { readField }) {
+              return existingFromPoland.filter(
+                (fromPolandRef: any) => data.deleteOneZPolski?._id !== readField('_id', fromPolandRef)
+              )
+            },
+          },
+        })
+      }
+    }
+  })
+  const [addFromPoland] = useAddFromPoland({
+    update: (cache, { data }) => {
+      if (data?.insertOneZPolski) {
+        cache.modify({
+          fields: {
+            zPolskis(existingFromPoland = []) {
+              return [...existingFromPoland, data.insertOneZPolski]
+            },
+          },
+        })
+      }
+    }
+  })
   const [updateFromPoland] = useUpdateFromPoland()
 
   if (error) return (<div>Error: {error.message}</div>)

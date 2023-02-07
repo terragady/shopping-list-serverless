@@ -5,8 +5,34 @@ import CircleSpinner, { LoaderWrapper } from 'components/loader/CircleSpinner'
 
 function ToDo() {
   const {data, loading, error} = useToDos()
-  const [deleteToDo] = useDeleteToDo()
-  const [addToDo] = useAddToDo()
+  const [deleteToDo] = useDeleteToDo({
+    update: (cache, {data}) => {
+      if (data?.deleteOneToDo) {
+        cache.modify({
+          fields: {
+            toDos(existingToDos = [], {readField}) {
+              return existingToDos.filter(
+                (toDoRef: any) => data.deleteOneToDo?._id !== readField('_id', toDoRef)
+              )
+            },
+          },
+        })
+      }
+    }
+  })
+  const [addToDo] = useAddToDo({
+    update: (cache, {data}) => {
+      if (data?.insertOneToDo) {
+        cache.modify({
+          fields: {
+            toDos(existingToDos = []) {
+              return [...existingToDos, data.insertOneToDo]
+            },
+          },
+        })
+      }
+    }
+  })
   const [updateToDo] = useUpdateToDo()
 
   if (error) return (<div>Error: {error.message}</div>)
