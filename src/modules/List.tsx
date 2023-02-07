@@ -142,7 +142,7 @@ const ListItem = styled.div`
     position: absolute;
     right: 5px;
     bottom: 0;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-size: 10px;
     color: rgba(0, 0, 0, 0.3);
   }
@@ -279,7 +279,19 @@ function List({
                 X
               </div>
             )}
-            <div className='name'>{item?.addedBy.split(' ')[0]}</div>
+            {/* <div className='name'>{item?.addedBy.split(' ')[0]}</div> */}
+            <div className='name'>
+              {item?.addedBy.split(' ')[0]} at{' '}
+              {new Intl.DateTimeFormat(undefined, {
+                year: 'numeric',
+                month: 'numeric',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: false,
+              }).format(new Date(parseInt(item?._id!.substring(0, 8), 16) * 1000))}
+            </div>
           </ListItem>
         )
       })}
