@@ -121,8 +121,6 @@ function Header() {
               <b>menu</b>
               {open && (
                 <List onClick={e => e.stopPropagation()}>
-                  <span>sasa</span>
-                  <span>sasa</span>
                   <span
                     onClick={() =>
                       realmApp.currentUser?.logOut().then(() => {
