@@ -1,6 +1,6 @@
 {
   "name": "shopping-list-serverless",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.7.7",
@@ -36,7 +36,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "codegen": "set DEBUG=1&& graphql-codegen --config codegen.yml"
-
   },
   "eslintConfig": {
     "extends": [
