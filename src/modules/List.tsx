@@ -110,7 +110,13 @@ const ListItem = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  .test {
+    display: none;
+  }
   :hover {
+    .test {
+      display: block;
+    }
     background-color: rgba(138, 138, 138, 1);
   }
 `
@@ -211,6 +217,7 @@ function List({
       {data?.map(item => {
         return (
           <ListItem className={item?.done ? 'done' : ''} key={item?._id}>
+            <Box className="test">H</Box>
             <Box
               onClick={e => {
                 e.preventDefault()
