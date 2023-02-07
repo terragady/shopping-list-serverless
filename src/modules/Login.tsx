@@ -29,15 +29,15 @@ function App() {
     }
   }, [])
 
-  const login = () => {
+  const login = async () => {
     setLoading(true)
-    realmApp
+    await realmApp
       .logIn(Realm.Credentials.facebook(redirectUri))
       .then(user => {
         console.log(`Logged in with id: ${JSON.stringify(user)}`)
       })
       .then(() => {
-        navigate('/', { replace: true })
+        window.location.reload()
       })
   }
   const loginEmail = () => {
