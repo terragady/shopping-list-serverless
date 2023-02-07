@@ -109,7 +109,10 @@ const ListItem = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center; ;
+  align-items: center;
+  :hover {
+    background-color: rgba(138, 138, 138, 1);
+  }
 `
 const Box = styled.div`
   width: 25px;
