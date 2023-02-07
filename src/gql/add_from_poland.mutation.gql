@@ -1,0 +1,8 @@
+mutation AddFromPoland($done: Boolean = false, $product: String!, $addedBy: String!) {
+  insertOneZPolski(data: { done: $done, product: $product, addedBy: $addedBy }) {
+    _id
+    addedBy
+    done
+    product
+  }
+}

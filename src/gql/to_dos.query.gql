@@ -1,0 +1,8 @@
+query ToDos($limit: Int = 100) {
+    toDos(limit: $limit) {
+        _id
+        addedBy
+        done
+        product
+    }
+}

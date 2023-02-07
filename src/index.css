@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Palatino';
+  src: url('https://fonts.cdnfonts.com/s/13595/pala.woff') format('woff');
+}
+
+html,
+#root {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Palatino', Verdana, Geneva, Tahoma, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  width: 100%;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.8);
+  background-color: rgb(48, 48, 48);
+}

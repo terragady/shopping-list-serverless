@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export const LoaderWrapper = styled.div`
+export const LoaderWrapperFixed = styled.div`
   position: fixed;
   top: 20px;
   right: 20px;
@@ -11,6 +11,15 @@ export const LoaderWrapper = styled.div`
   border-radius: 50%;
   padding: 5px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+`
+
+export const LoaderWrapper = styled.div`
+  display: flex;
+  margin-top: 20px;
+  width: 100%;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;

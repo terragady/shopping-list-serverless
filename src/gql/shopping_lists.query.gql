@@ -1,11 +1,7 @@
 query ShoppingLists($limit: Int = 100) {
-    shoppingLists(limit: $limit) {
+    shoppingLists(limit: $limit, sortBy: PRODUCT_ASC) {
         _id
-        addedBy {
-            _id
-            user_id
-            name
-        }
+        addedBy
         done
         product  
     }

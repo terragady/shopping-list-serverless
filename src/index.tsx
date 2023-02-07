@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './containers/App';
+import Root from './containers/Root';
 import * as serviceWorker from './serviceWorker'
+import './index.css'
+import { BrowserRouter as Router } from 'react-router-dom'
+
+
 
 
 const root = ReactDOM.createRoot(
@@ -9,7 +13,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+    <Root />
+    </Router>
   </React.StrictMode>
 );
 serviceWorker.register();

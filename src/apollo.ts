@@ -1,4 +1,5 @@
-import { ApolloClient, InMemoryCache, HttpLink, ApolloLink, from } from '@apollo/client'
+import { ApolloClient, InMemoryCache, HttpLink, from } from '@apollo/client'
+import { setContext } from '@apollo/client/link/context'
 import { realmApp } from 'realm'
 
 async function getValidAccessToken() {
@@ -18,23 +19,30 @@ async function getValidAccessToken() {
 
 export const httpLink = new HttpLink({ uri: 'https://eu-west-1.aws.realm.mongodb.com/api/client/v2.0/app/shopping-list-serverless-fqtdh/graphql' })
 
-export const authMiddleware = new ApolloLink(async (operation, forward) => {
-  await getValidAccessToken().then(token => {
-    operation.setContext({
-      headers: {
-        ...operation.getContext().headers,
-        Authorization: token ? `Bearer ${token}` : '',
-      },
-    })
-  })
+// export const authMiddleware = new ApolloLink(async (operation, forward) => {
+//   await getValidAccessToken().then(token => {
+//     operation.setContext({
+//       headers: {
+//         ...operation.getContext().headers,
+//         Authorization: token ? `Bearer ${token}` : '',
+//       },
+//     })
+//   })
+//   return forward(operation)
+// })
 
-  return forward(operation)
+const authenticationLink = setContext(async (_, { headers }) => {
+  const token = await getValidAccessToken()
+  return {
+    headers: {
+      ...headers,
+      Authorization: token ? `Bearer ${token}` : '',
+    },
+  }
 })
 
-export const link = from([authMiddleware, httpLink])
-
 const client = new ApolloClient({
-  link: link,
+  link: from([authenticationLink, httpLink]),
   cache: new InMemoryCache(),
 })
 

@@ -1,0 +1,8 @@
+query FromPoland($limit: Int = 100) {
+    zPolskis(limit: $limit) {
+        _id
+        addedBy
+        done
+        product
+    }
+}

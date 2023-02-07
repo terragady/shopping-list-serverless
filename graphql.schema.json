@@ -142,31 +142,6 @@
             "deprecationReason": null
           },
           {
-            "name": "deleteManyUsers",
-            "description": "",
-            "args": [
-              {
-                "name": "query",
-                "description": "",
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "UserQueryInput",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              }
-            ],
-            "type": {
-              "kind": "OBJECT",
-              "name": "DeleteManyPayload",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "deleteManyZPolskis",
             "description": "",
             "args": [
@@ -244,35 +219,6 @@
             "type": {
               "kind": "OBJECT",
               "name": "ToDo",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "deleteOneUser",
-            "description": "",
-            "args": [
-              {
-                "name": "query",
-                "description": "",
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "UserQueryInput",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              }
-            ],
-            "type": {
-              "kind": "OBJECT",
-              "name": "User",
               "ofType": null
             },
             "isDeprecated": false,
@@ -382,43 +328,6 @@
             "deprecationReason": null
           },
           {
-            "name": "insertManyUsers",
-            "description": "",
-            "args": [
-              {
-                "name": "data",
-                "description": "",
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "LIST",
-                    "name": null,
-                    "ofType": {
-                      "kind": "NON_NULL",
-                      "name": null,
-                      "ofType": {
-                        "kind": "INPUT_OBJECT",
-                        "name": "UserInsertInput",
-                        "ofType": null
-                      }
-                    }
-                  }
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              }
-            ],
-            "type": {
-              "kind": "OBJECT",
-              "name": "InsertManyPayload",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "insertManyZPolskis",
             "description": "",
             "args": [
@@ -508,35 +417,6 @@
             "type": {
               "kind": "OBJECT",
               "name": "ToDo",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "insertOneUser",
-            "description": "",
-            "args": [
-              {
-                "name": "data",
-                "description": "",
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "UserInsertInput",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              }
-            ],
-            "type": {
-              "kind": "OBJECT",
-              "name": "User",
               "ofType": null
             },
             "isDeprecated": false,
@@ -654,47 +534,6 @@
             "deprecationReason": null
           },
           {
-            "name": "replaceOneUser",
-            "description": "",
-            "args": [
-              {
-                "name": "data",
-                "description": "",
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "UserInsertInput",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "query",
-                "description": "",
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "UserQueryInput",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              }
-            ],
-            "type": {
-              "kind": "OBJECT",
-              "name": "User",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "replaceOneZPolski",
             "description": "",
             "args": [
@@ -801,47 +640,6 @@
                   "ofType": {
                     "kind": "INPUT_OBJECT",
                     "name": "ToDoUpdateInput",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              }
-            ],
-            "type": {
-              "kind": "OBJECT",
-              "name": "UpdateManyPayload",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "updateManyUsers",
-            "description": "",
-            "args": [
-              {
-                "name": "query",
-                "description": "",
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "UserQueryInput",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "set",
-                "description": "",
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "UserUpdateInput",
                     "ofType": null
                   }
                 },
@@ -982,47 +780,6 @@
             "deprecationReason": null
           },
           {
-            "name": "updateOneUser",
-            "description": "",
-            "args": [
-              {
-                "name": "query",
-                "description": "",
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "UserQueryInput",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "set",
-                "description": "",
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "UserUpdateInput",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              }
-            ],
-            "type": {
-              "kind": "OBJECT",
-              "name": "User",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "updateOneZPolski",
             "description": "",
             "args": [
@@ -1140,47 +897,6 @@
             "type": {
               "kind": "OBJECT",
               "name": "ToDo",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "upsertOneUser",
-            "description": "",
-            "args": [
-              {
-                "name": "data",
-                "description": "",
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "UserInsertInput",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "query",
-                "description": "",
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "UserQueryInput",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              }
-            ],
-            "type": {
-              "kind": "OBJECT",
-              "name": "User",
               "ofType": null
             },
             "isDeprecated": false,
@@ -1413,88 +1129,6 @@
             "deprecationReason": null
           },
           {
-            "name": "user",
-            "description": "",
-            "args": [
-              {
-                "name": "query",
-                "description": "",
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "UserQueryInput",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              }
-            ],
-            "type": {
-              "kind": "OBJECT",
-              "name": "User",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "users",
-            "description": "",
-            "args": [
-              {
-                "name": "limit",
-                "description": "",
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null
-                },
-                "defaultValue": "100",
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "query",
-                "description": "",
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "UserQueryInput",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "sortBy",
-                "description": "",
-                "type": {
-                  "kind": "ENUM",
-                  "name": "UserSortByInput",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              }
-            ],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "User",
-                  "ofType": null
-                }
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "zPolski",
             "description": "",
             "args": [
@@ -1611,8 +1245,8 @@
               "kind": "NON_NULL",
               "name": null,
               "ofType": {
-                "kind": "OBJECT",
-                "name": "User",
+                "kind": "SCALAR",
+                "name": "String",
                 "ofType": null
               }
             },
@@ -1659,41 +1293,6 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "ShoppingListAddedByRelationInput",
-        "description": "",
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "create",
-            "description": "",
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "UserInsertInput",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "link",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
         "name": "ShoppingListInsertInput",
         "description": "",
         "fields": null,
@@ -1717,8 +1316,8 @@
               "kind": "NON_NULL",
               "name": null,
               "ofType": {
-                "kind": "INPUT_OBJECT",
-                "name": "ShoppingListAddedByRelationInput",
+                "kind": "SCALAR",
+                "name": "String",
                 "ofType": null
               }
             },
@@ -1929,8 +1528,8 @@
             "name": "addedBy",
             "description": "",
             "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "UserQueryInput",
+              "kind": "SCALAR",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null,
@@ -1944,6 +1543,98 @@
               "kind": "SCALAR",
               "name": "Boolean",
               "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "addedBy_gt",
+            "description": "",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "addedBy_gte",
+            "description": "",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "addedBy_in",
+            "description": "",
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "addedBy_lt",
+            "description": "",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "addedBy_lte",
+            "description": "",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "addedBy_ne",
+            "description": "",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "addedBy_nin",
+            "description": "",
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
             },
             "defaultValue": null,
             "isDeprecated": false,
@@ -2187,8 +1878,8 @@
             "name": "addedBy",
             "description": "",
             "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "ShoppingListAddedByRelationInput",
+              "kind": "SCALAR",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null,
@@ -2324,7 +2015,7 @@
             "deprecationReason": null
           },
           {
-            "name": "task",
+            "name": "product",
             "description": "",
             "args": [],
             "type": {
@@ -2396,7 +2087,7 @@
             "deprecationReason": null
           },
           {
-            "name": "task",
+            "name": "product",
             "description": "",
             "type": {
               "kind": "NON_NULL",
@@ -2731,7 +2422,7 @@
             "deprecationReason": null
           },
           {
-            "name": "task",
+            "name": "product",
             "description": "",
             "type": {
               "kind": "SCALAR",
@@ -2743,7 +2434,7 @@
             "deprecationReason": null
           },
           {
-            "name": "task_exists",
+            "name": "product_exists",
             "description": "",
             "type": {
               "kind": "SCALAR",
@@ -2755,7 +2446,7 @@
             "deprecationReason": null
           },
           {
-            "name": "task_gt",
+            "name": "product_gt",
             "description": "",
             "type": {
               "kind": "SCALAR",
@@ -2767,7 +2458,7 @@
             "deprecationReason": null
           },
           {
-            "name": "task_gte",
+            "name": "product_gte",
             "description": "",
             "type": {
               "kind": "SCALAR",
@@ -2779,7 +2470,7 @@
             "deprecationReason": null
           },
           {
-            "name": "task_in",
+            "name": "product_in",
             "description": "",
             "type": {
               "kind": "LIST",
@@ -2795,7 +2486,7 @@
             "deprecationReason": null
           },
           {
-            "name": "task_lt",
+            "name": "product_lt",
             "description": "",
             "type": {
               "kind": "SCALAR",
@@ -2807,7 +2498,7 @@
             "deprecationReason": null
           },
           {
-            "name": "task_lte",
+            "name": "product_lte",
             "description": "",
             "type": {
               "kind": "SCALAR",
@@ -2819,7 +2510,7 @@
             "deprecationReason": null
           },
           {
-            "name": "task_ne",
+            "name": "product_ne",
             "description": "",
             "type": {
               "kind": "SCALAR",
@@ -2831,7 +2522,7 @@
             "deprecationReason": null
           },
           {
-            "name": "task_nin",
+            "name": "product_nin",
             "description": "",
             "type": {
               "kind": "LIST",
@@ -2872,13 +2563,13 @@
             "deprecationReason": null
           },
           {
-            "name": "TASK_ASC",
+            "name": "PRODUCT_ASC",
             "description": "",
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "TASK_DESC",
+            "name": "PRODUCT_DESC",
             "description": "",
             "isDeprecated": false,
             "deprecationReason": null
@@ -2977,7 +2668,7 @@
             "deprecationReason": null
           },
           {
-            "name": "task",
+            "name": "product",
             "description": "",
             "type": {
               "kind": "SCALAR",
@@ -2989,7 +2680,7 @@
             "deprecationReason": null
           },
           {
-            "name": "task_unset",
+            "name": "product_unset",
             "description": "",
             "type": {
               "kind": "SCALAR",
@@ -3050,629 +2741,6 @@
       },
       {
         "kind": "OBJECT",
-        "name": "User",
-        "description": "",
-        "fields": [
-          {
-            "name": "_id",
-            "description": "",
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "ObjectId",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "name",
-            "description": "",
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "user_id",
-            "description": "",
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "inputFields": null,
-        "interfaces": [],
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "UserInsertInput",
-        "description": "",
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "_id",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "ObjectId",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "name",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "user_id",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "UserQueryInput",
-        "description": "",
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "AND",
-            "description": "",
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "UserQueryInput",
-                  "ofType": null
-                }
-              }
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "OR",
-            "description": "",
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "UserQueryInput",
-                  "ofType": null
-                }
-              }
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_id",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "ObjectId",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_id_exists",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_id_gt",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "ObjectId",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_id_gte",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "ObjectId",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_id_in",
-            "description": "",
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "ObjectId",
-                "ofType": null
-              }
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_id_lt",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "ObjectId",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_id_lte",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "ObjectId",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_id_ne",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "ObjectId",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_id_nin",
-            "description": "",
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "ObjectId",
-                "ofType": null
-              }
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "name",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "name_exists",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "name_gt",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "name_gte",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "name_in",
-            "description": "",
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "name_lt",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "name_lte",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "name_ne",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "name_nin",
-            "description": "",
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "user_id",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "user_id_exists",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "user_id_gt",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "user_id_gte",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "user_id_in",
-            "description": "",
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "user_id_lt",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "user_id_lte",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "user_id_ne",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "user_id_nin",
-            "description": "",
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "ENUM",
-        "name": "UserSortByInput",
-        "description": "",
-        "fields": null,
-        "inputFields": null,
-        "interfaces": null,
-        "enumValues": [
-          {
-            "name": "NAME_ASC",
-            "description": "",
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "NAME_DESC",
-            "description": "",
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "USER_ID_ASC",
-            "description": "",
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "USER_ID_DESC",
-            "description": "",
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_ID_ASC",
-            "description": "",
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_ID_DESC",
-            "description": "",
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "UserUpdateInput",
-        "description": "",
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "_id",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "ObjectId",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_id_unset",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "name",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "name_unset",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "user_id",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "user_id_unset",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "OBJECT",
         "name": "ZPolski",
         "description": "",
         "fields": [
@@ -3725,7 +2793,7 @@
             "deprecationReason": null
           },
           {
-            "name": "record",
+            "name": "product",
             "description": "",
             "args": [],
             "type": {
@@ -3797,7 +2865,7 @@
             "deprecationReason": null
           },
           {
-            "name": "record",
+            "name": "product",
             "description": "",
             "type": {
               "kind": "NON_NULL",
@@ -4132,7 +3200,7 @@
             "deprecationReason": null
           },
           {
-            "name": "record",
+            "name": "product",
             "description": "",
             "type": {
               "kind": "SCALAR",
@@ -4144,7 +3212,7 @@
             "deprecationReason": null
           },
           {
-            "name": "record_exists",
+            "name": "product_exists",
             "description": "",
             "type": {
               "kind": "SCALAR",
@@ -4156,7 +3224,7 @@
             "deprecationReason": null
           },
           {
-            "name": "record_gt",
+            "name": "product_gt",
             "description": "",
             "type": {
               "kind": "SCALAR",
@@ -4168,7 +3236,7 @@
             "deprecationReason": null
           },
           {
-            "name": "record_gte",
+            "name": "product_gte",
             "description": "",
             "type": {
               "kind": "SCALAR",
@@ -4180,7 +3248,7 @@
             "deprecationReason": null
           },
           {
-            "name": "record_in",
+            "name": "product_in",
             "description": "",
             "type": {
               "kind": "LIST",
@@ -4196,7 +3264,7 @@
             "deprecationReason": null
           },
           {
-            "name": "record_lt",
+            "name": "product_lt",
             "description": "",
             "type": {
               "kind": "SCALAR",
@@ -4208,7 +3276,7 @@
             "deprecationReason": null
           },
           {
-            "name": "record_lte",
+            "name": "product_lte",
             "description": "",
             "type": {
               "kind": "SCALAR",
@@ -4220,7 +3288,7 @@
             "deprecationReason": null
           },
           {
-            "name": "record_ne",
+            "name": "product_ne",
             "description": "",
             "type": {
               "kind": "SCALAR",
@@ -4232,7 +3300,7 @@
             "deprecationReason": null
           },
           {
-            "name": "record_nin",
+            "name": "product_nin",
             "description": "",
             "type": {
               "kind": "LIST",
@@ -4273,13 +3341,13 @@
             "deprecationReason": null
           },
           {
-            "name": "RECORD_ASC",
+            "name": "PRODUCT_ASC",
             "description": "",
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "RECORD_DESC",
+            "name": "PRODUCT_DESC",
             "description": "",
             "isDeprecated": false,
             "deprecationReason": null
@@ -4378,7 +3446,7 @@
             "deprecationReason": null
           },
           {
-            "name": "record",
+            "name": "product",
             "description": "",
             "type": {
               "kind": "SCALAR",
@@ -4390,7 +3458,7 @@
             "deprecationReason": null
           },
           {
-            "name": "record_unset",
+            "name": "product_unset",
             "description": "",
             "type": {
               "kind": "SCALAR",

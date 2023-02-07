@@ -1,0 +1,8 @@
+mutation UpdateFromPoland($_id:ObjectId! $done: Boolean!, $product: String, $addedBy: String) {
+  updateOneZPolski(query: {_id: $_id}, set: { done: $done, product: $product, addedBy: $addedBy }) {
+    _id
+    addedBy
+    done
+    product
+  }
+}

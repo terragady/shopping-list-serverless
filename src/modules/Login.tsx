@@ -1,60 +1,65 @@
-import React from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import * as Realm from 'realm-web'
 import { realmApp } from 'realm'
 import CircleSpinner from 'components/loader/CircleSpinner'
-import facebook from 'assets/facebook.png'
+import facebook from 'assets/login.png'
+import { useNavigate } from 'react-router-dom'
 
-const Login = styled.div`
-  width: 400px;
-  height: 100px;
-  background-image: url(${facebook});
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  /* background-color: red; */
+const Wrapper = styled.div`
+  padding-top: 40px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 `
+
 
 function App() {
   const [loading, setLoading] = React.useState(false)
-  // The redirect URI should be on the same domain as this app and
-  // specified in the auth provider configuration.
+  const navigate = useNavigate()
   const redirectUri = process.env.NODE_ENV === 'production' ? 'https://shopping-list-serverless.netlify.app/auth' : 'http://localhost:3000/auth'
 
-  // Calling logIn() opens a Facebook authentication screen in a new window.
+  useEffect(() => {
+    if (realmApp.currentUser?.isLoggedIn) {
+      navigate('/', { replace: true })
+    }
+  }, [realmApp.currentUser?.isLoggedIn, navigate])
   const login = () => {
     setLoading(true)
     realmApp
       .logIn(Realm.Credentials.facebook(redirectUri))
       .then(user => {
-        // The logIn() promise will not resolve until you call `handleAuthRedirect()`
-        // from the new window after the user has successfully authenticated.
         console.log(`Logged in with id: ${JSON.stringify(user)}`)
       })
       .then(() => {
-        window.location.replace('/')
+        navigate('/', { replace: true })
       })
-    // When the user is redirected back to your app, handle the redirect to
-    // save the user's access token and close the redirect window. This
-    // returns focus to the original application window and automatically
-    // logs the user in.
+  }
+  const loginEmail = () => {
+    setLoading(true)
+    realmApp
+      .logIn(Realm.Credentials.emailPassword('terragady@gmail.com', 'test4321'))
+      .then(user => {
+        console.log(`Logged in with id: ${JSON.stringify(user)}`)
+      })
+      .then(() => {
+        navigate('/', { replace: true })
+      })
   }
 
   return (
-    <div className='App'>
-      <header className='App-header'>
-        {loading ? (
-         <><CircleSpinner size={50} fast/></> 
-        ) : (
-          <>
-            <Login onClick={() => login()}></Login>
-            <h1>sda{realmApp.currentUser?.isLoggedIn.toString()}</h1>
-          </>
-        )}
-      </header>
-      {process.env.NODE_ENV}
-    </div>
+    <Wrapper>
+      {loading ? <CircleSpinner size={50} fast /> : <img src={facebook} alt='login' onClick={() => login()} />}
+      {process.env.NODE_ENV === 'development' && (
+        <button style={{ marginTop: '50px' }} onClick={() => loginEmail()}>
+          Login
+        </button>
+      )}
+    </Wrapper>
   )
 }
 

@@ -1,0 +1,8 @@
+mutation DeleteFromPoland($_id: ObjectId!) {
+  deleteOneZPolski(query: { _id: $_id }) {
+    _id
+    addedBy
+    done
+    product
+  }
+}

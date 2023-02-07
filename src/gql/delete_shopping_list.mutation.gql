@@ -1,0 +1,8 @@
+mutation DeleteShoppingList($_id: ObjectId!) {
+  deleteOneShoppingList(query: { _id: $_id }) {
+    _id
+    addedBy
+    done
+    product
+  }
+}

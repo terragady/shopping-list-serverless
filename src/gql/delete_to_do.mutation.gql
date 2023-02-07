@@ -1,0 +1,8 @@
+mutation DeleteToDo($_id: ObjectId!) {
+  deleteOneToDo(query: { _id: $_id }) {
+    _id
+    addedBy
+    done
+    product
+  }
+}
