@@ -20,6 +20,7 @@ code {
 body {
   margin: 0;
   padding: 0;
+  user-select: none;
   font-family: 'Palatino', Verdana, Geneva, Tahoma, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

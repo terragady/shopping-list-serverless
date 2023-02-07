@@ -25,7 +25,6 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  text-decoration: none !important;
 `
 
 const Wrapper = styled.div`
@@ -37,10 +36,14 @@ const Wrapper = styled.div`
   flex: 1 0;
   .done {
     order: 1;
-    background-color: rgb(88, 88, 88);
-    color: grey;
+    background-color: rgb(126, 126, 126);
+    color: #9c9c9c;
     font-style: italic;
+    span {
+      text-decoration: line-through 0.2rem rgba(0, 0, 0, 0.2);
+    }
     ${Box} {
+      text-decoration: none;
       border-color: rgba(240, 240, 240, 0.3);
     }
     .name {
@@ -256,7 +259,7 @@ function List({
             >
               {item?.done && '✔️'}
             </Box>
-            {item?.product}
+            <span>{item?.product}</span>
             {item?.done === true && (
               <div
                 onClick={e => {
