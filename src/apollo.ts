@@ -4,7 +4,7 @@ import { realmApp } from 'realm'
 
 async function getValidAccessToken() {
   if (!realmApp.currentUser) {
-    window.location.replace('/')
+    window.location.replace('/login')
     return ''
   } else {
     await realmApp.currentUser.refreshAccessToken()

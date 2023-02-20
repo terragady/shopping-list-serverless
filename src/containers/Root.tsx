@@ -44,15 +44,10 @@ const Main = styled.div`
 `
 
 const Root = () => {
-  const navigate = useNavigate()
   const Token = () => {
     Realm.handleAuthRedirect()
-    return null
+    return <span>logging in, don't close</span>
   }
-  
-  useEffect(() => {
-    if (realmApp.currentUser?.isLoggedIn) navigate('/login')
-  }, [])
 
   return (
     <ApolloProvider client={client}>
