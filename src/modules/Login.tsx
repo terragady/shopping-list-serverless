@@ -25,7 +25,7 @@ function App() {
 
   if (realmApp.currentUser?.isLoggedIn) {
     console.log("logged in")
-    navigate('/', { replace: true })
+    navigate('/home', { replace: true })
   }
   console.log(realmApp.currentUser?.isLoggedIn)
 

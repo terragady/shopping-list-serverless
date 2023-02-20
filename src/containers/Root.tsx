@@ -57,15 +57,15 @@ const Root = () => {
         <Main>
           <ScrollToTop />
           <Routes>
-            <Route path='/login' key='/login' element={!realmApp.currentUser?.isLoggedIn ? <Login /> : <Navigate to='/' replace />} />
+            <Route path='/login' key='/login' element={<Login />} />
             <Route path='/auth' key='/auth' element={<Token />} />
             <Route element={realmApp.currentUser?.isLoggedIn ? <Outlet /> : <Navigate to='/login' replace />} key='protected route'>
-              <Route path='/' key='/' element={<Home key='homeElement' />} />
+              <Route path='/home' key='/home' element={<Home key='homeElement' />} />
               <Route path='/toDo' key='/toDo' element={<ToDo />} />
               <Route path='/fromPoland' key='/toDo' element={<FromPoland />} />
               <Route path='/shoppingList' key='/toDo' element={<ShoppingList />} />
             </Route>
-            <Route path='*' key='*' element={<Navigate to='/' />} />
+            <Route path='*' key='*' element={<Navigate to='/home' />} />
           </Routes>
         </Main>
       </Wrapper>
