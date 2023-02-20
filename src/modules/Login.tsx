@@ -23,11 +23,9 @@ function App() {
   const navigate = useNavigate()
   const redirectUri = process.env.NODE_ENV === 'production' ? 'https://shopping-list-serverless.netlify.app/auth' : 'http://localhost:3000/auth'
 
-  useEffect(() => {
-    if (realmApp.currentUser?.isLoggedIn) {
-      navigate('/', { replace: true })
-    }
-  }, [])
+  if (realmApp.currentUser?.isLoggedIn) {
+    navigate('/', { replace: true })
+  }
 
   const login = async () => {
     setLoading(true)

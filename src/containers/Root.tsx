@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from 'react'
+import React from 'react'
 import { ApolloProvider } from '@apollo/client'
 import client from 'apollo'
-import { Routes, Route, Navigate, Outlet, useNavigate } from 'react-router-dom'
+import { Routes, Route, Navigate, Outlet } from 'react-router-dom'
 import styled from 'styled-components'
 // import * as GQL from 'generated/graphql'
 import ScrollToTop from 'components/scrollToTop/ScrollToTop'
@@ -44,6 +44,7 @@ const Main = styled.div`
 `
 
 const Root = () => {
+  
   const Token = () => {
     Realm.handleAuthRedirect()
     return <span>logging in, don't close</span>
