@@ -41,7 +41,6 @@ const Main = styled.div`
   align-items: center;
   padding: 15px;
   padding-bottom: 50px;
-
 `
 
 const Root = () => {
