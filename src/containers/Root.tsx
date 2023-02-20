@@ -57,7 +57,7 @@ const Root = () => {
         <Main>
           <ScrollToTop />
           <Routes>
-            <Route path='/login' key='/login' element={<Login />} />
+            <Route path='/login' key='/login' element={!realmApp.currentUser?.isLoggedIn ? <Login /> : <Navigate to='/' replace />} />
             <Route path='/auth' key='/auth' element={<Token />} />
             <Route element={realmApp.currentUser?.isLoggedIn ? <Outlet /> : <Navigate to='/login' replace />} key='protected route'>
               <Route path='/' key='/' element={<Home key='homeElement' />} />
