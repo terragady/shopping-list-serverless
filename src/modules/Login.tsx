@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import * as Realm from 'realm-web'
 import { realmApp } from 'realm'
@@ -23,10 +23,14 @@ function App() {
   const navigate = useNavigate()
   const redirectUri = process.env.NODE_ENV === 'production' ? 'https://shopping-list-serverless.netlify.app/auth' : 'http://localhost:3000/auth'
 
-  if (realmApp.currentUser?.isLoggedIn) {
-    console.log("logged in")
-    navigate('/', { replace: true })
-  }
+  
+
+  useEffect(() => {
+    if (realmApp.currentUser?.isLoggedIn) {
+      console.log("logged in")
+      navigate('/', { replace: true })
+    }
+  }, [realmApp.currentUser?.isLoggedIn])
   console.log(realmApp.currentUser?.isLoggedIn)
 
   const login = async () => {
