@@ -25,7 +25,7 @@ function App() {
 
   if (realmApp.currentUser?.isLoggedIn) {
     console.log("logged in")
-    navigate('/home', { replace: true })
+    navigate('/', { replace: true })
   }
   console.log(realmApp.currentUser?.isLoggedIn)
 
@@ -37,7 +37,7 @@ function App() {
         console.log(`Logged in with id: ${JSON.stringify(user)}`)
       })
       .then(() => {
-        navigate('/', { replace: true })
+        window.location.replace('/')
       })
   }
   const loginEmail = () => {
