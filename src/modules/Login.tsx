@@ -24,8 +24,10 @@ function App() {
   const redirectUri = process.env.NODE_ENV === 'production' ? 'https://shopping-list-serverless.netlify.app/auth' : 'http://localhost:3000/auth'
 
   if (realmApp.currentUser?.isLoggedIn) {
+    console.log("logged in")
     navigate('/', { replace: true })
   }
+  console.log(realmApp.currentUser?.isLoggedIn)
 
   const login = async () => {
     setLoading(true)
@@ -35,7 +37,7 @@ function App() {
         console.log(`Logged in with id: ${JSON.stringify(user)}`)
       })
       .then(() => {
-        window.location.reload()
+        navigate('/', { replace: true })
       })
   }
   const loginEmail = () => {
