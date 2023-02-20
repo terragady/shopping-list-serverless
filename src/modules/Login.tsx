@@ -18,12 +18,10 @@ const Wrapper = styled.div`
 `
 
 
-function App() {
+function Login() {
   const [loading, setLoading] = React.useState(false)
   const navigate = useNavigate()
   const redirectUri = process.env.NODE_ENV === 'production' ? 'https://shopping-list-serverless.netlify.app/auth' : 'http://localhost:3000/auth'
-
-  
 
   useEffect(() => {
     if (realmApp.currentUser?.isLoggedIn) {
@@ -31,7 +29,6 @@ function App() {
       navigate('/', { replace: true })
     }
   }, [realmApp.currentUser?.isLoggedIn])
-  console.log(realmApp.currentUser?.isLoggedIn)
 
   const login = async () => {
     setLoading(true)
@@ -67,4 +64,4 @@ function App() {
   )
 }
 
-export default App
+export default Login
