@@ -43,7 +43,7 @@ function App() {
   const loginEmail = () => {
     setLoading(true)
     realmApp
-      .logIn(Realm.Credentials.emailPassword('terragady@gmail.com', 'test4321'))
+      .logIn(Realm.Credentials.emailPassword('terragady@gmail.com', process.env.REACT_APP_EMAIL_PASSWORD!))
       .then(user => {
         console.log(`Logged in with id: ${JSON.stringify(user)}`)
       })
@@ -51,7 +51,6 @@ function App() {
         navigate('/', { replace: true })
       })
   }
-
   return (
     <Wrapper>
       {loading ? <CircleSpinner size={50} fast /> : <img src={facebook} alt='login' onClick={() => login()} />}

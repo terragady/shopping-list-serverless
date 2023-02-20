@@ -95,20 +95,22 @@ function Header() {
       >
         Family Lists
       </Title>
+      *
+      <Title>
+        {location.pathname === '/'
+          ? 'Home'
+          : location.pathname === '/shoppingList'
+          ? 'Lista zakupów'
+          : location.pathname === '/fromPoland'
+          ? 'Z Polski'
+          : location.pathname === '/toDo'
+          ? 'Do zrobienia'
+          : location.pathname === '/toDo'
+          ? 'Login'
+          : location.pathname || '___'}
+      </Title>
       {realmApp.currentUser?.isLoggedIn && (
         <>
-          *
-          <Title>
-            {location.pathname === '/'
-              ? 'Home'
-              : location.pathname === '/shoppingList'
-              ? 'Lista zakupów'
-              : location.pathname === '/fromPoland'
-              ? 'Z Polski'
-              : location.pathname === '/toDo'
-              ? 'Do zrobienia'
-              : '_'}
-          </Title>
           *
           <Title>
             <MenuButton
